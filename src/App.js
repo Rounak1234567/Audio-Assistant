@@ -17,7 +17,7 @@ const App = () => {
     {
       command: 'open *',
       callback: (site) => { window.open('http://' + site + '.com') }
-      
+
     },
     {
       command: 'increase text size',
@@ -30,6 +30,10 @@ const App = () => {
     {
       command: 'change text colour to *',
       callback: (color) => {document.getElementById('content').style.color =  color}
+    },
+    {
+      command: 'change background colour to *',
+      callback: (color) => {document.querySelector("body").style.color =  color}
     }
   ]
 

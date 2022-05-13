@@ -34,6 +34,10 @@ const App = () => {
     {
       command: 'change background colour to *',
       callback: (color) => {document.querySelector("body").style.background =  color}
+    },
+    {
+      command: 'change heading colour to *',
+      callback: (color) => {document.querySelectorAll("h2").style.color =  color}
     }
   ]
 

@@ -37,8 +37,25 @@ const App = () => {
     },
     {
       command: 'change heading colour to *',
-      callback: (color) => {document.querySelectorAll("h2").style.color =  color}
+      callback: (color) => {document.getElementById("heading").style.color =  color}
+    },
+    {
+      command: 'change theme to dark',
+      callback: () => {
+        document.querySelector("body").style.background =  "black";
+        document.getElementById("heading").style.color = "white";
+        document.getElementById("content").style.background = "black";
+        document.getElementById("content").style.color = "white";
+      }
+    },
+    {
+      command: 'change theme to light',
+      callback: () => {document.querySelector("body").style.background =  "white";
+      document.getElementById("heading").style.color = "black"
+      document.getElementById("content").style.background = "white";
+        document.getElementById("content").style.color = "black";
     }
+    },
   ]
 
   const handleStart = ()=>{
@@ -57,13 +74,16 @@ const App = () => {
   return (
     <div className='container'>
       <div className='nav'>
-        <h2>Please Speak Something to write</h2>
+        <h2 id='heading'>Please Speak Something to Write</h2>
       </div>
       <div id='content'>
         {transcript}
       </div>
-      <button onClick={handleStart}>Start</button>
-      <button onClick={SpeechRecognition.stopListening}>Stop</button>
+      <div id='buttons'>
+      <button onClick={handleStart}>Start Listening</button>
+      <button onClick={SpeechRecognition.stopListening}>Stop Listening</button>
+      </div>
+      
     </div>
   )
 }

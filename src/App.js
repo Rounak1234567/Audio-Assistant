@@ -41,8 +41,13 @@ const App = () => {
     }
   ]
 
-  SpeechRecognition.startListening({ continuous: true, language:'en-IN' })
+  const handleStart = ()=>{
+    SpeechRecognition.startListening({ continuous: true, language:'en-IN' })
+  
+  }
+
   const { transcript, browserSupportsSpeechRecognition } = useSpeechRecognition({ commands })
+  
 
   
   if (!browserSupportsSpeechRecognition) {
@@ -57,6 +62,8 @@ const App = () => {
       <div id='content'>
         {transcript}
       </div>
+      <button onClick={handleStart}>Start</button>
+      <button onClick={SpeechRecognition.stopListening}>Stop</button>
     </div>
   )
 }

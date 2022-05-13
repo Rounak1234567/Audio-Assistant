@@ -33,7 +33,7 @@ const App = () => {
     },
     {
       command: 'change background colour to *',
-      callback: (color) => {document.querySelector("body").style.color =  color}
+      callback: (color) => {document.querySelector("body").style.background =  color}
     }
   ]
 
